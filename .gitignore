@@ -1,0 +1,6 @@
+venv/
+
+Server/Account/__pycache__
+Server/Account/migrations/__pycache__
+
+Server/Server/__pycache__
