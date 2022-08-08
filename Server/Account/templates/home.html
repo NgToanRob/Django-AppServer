@@ -8,13 +8,11 @@
 </head>
 <body>
     <h1>This is home page</h1>
-    <form align="left" name="form1" method="get" action="">
-        {% csrf_token %}
-        <label>
-        <input name="submit2" type="submit" id="submit2" value="log out">
-        </label>
-    </form>
 
+    <form action="logout/" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Logout" />
+    </form>
 
       
 </body>

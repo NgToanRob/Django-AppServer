@@ -11,13 +11,17 @@
     <form method="POST" class="form-group">
 	{% csrf_token %}
 	<label for="">Username</label>
-    <input type="text" value="usrname">
+    <input type="text" name="username">
+    
     <label for="">Email</label>
-    <input type="email" value="email">
+    <input type="email" name="email">
+    
     <label for="">Password</label>
     <input type="password" name="password" id="">
+    
     <label for="">Team ID</label>
     <input type="number" name="team_id" id="">
+
 	<button type="submit" class="btn btn-success">Register</button>
     </form>
     
