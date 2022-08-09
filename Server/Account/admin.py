@@ -5,7 +5,7 @@ from .models import User, Team
 class UserAdmin(admin.ModelAdmin):
     list_display = ('id', 'username', 'email', 'team' ,'is_active', 'is_staff' )
     search_fields = ['username']
-    list_filter = ['username', 'email', 'team','is_active', 'is_staff' ]
+    list_filter = ['team','is_active', 'is_staff' ]
     ordering = ['id']
 
 class TeamAdmin(admin.ModelAdmin):
