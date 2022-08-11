@@ -20,7 +20,7 @@ class Aircraft(models.Model):
     name = models.CharField(max_length=255, null=False)
     aircraft_type = models.ForeignKey(AircraftType, on_delete=models.CASCADE, \
                                         null=False)
-    team = models.ForeignKey(Team, on_delete=models.CASCADE, null=False)
+    team = models.ForeignKey(Team, on_delete=models.CASCADE, null=False, default=1)
     status = models.BooleanField(null=False)
     activation_time =  models.DateTimeField(auto_now_add=True, null=False)
     serial_number = models.CharField(max_length=255, null=False)
@@ -56,4 +56,4 @@ class Realtime(models.Model):
     flight_record = models.CharField(max_length=255)
 
     def __str__(self):
-        return str(self.id) + ". " + self.user.__str__()
+        return str(self.id)

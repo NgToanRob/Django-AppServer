@@ -17,5 +17,7 @@ pip install requirements.txt
 ## Run server
 ```
 cd Server
+python manage.py makemigration
+python manage.py migrate
 python manage.py runserver
 ```

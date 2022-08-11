@@ -13,10 +13,10 @@ class AircraftTypeAdmin(admin.ModelAdmin):
     ordering = ['id']
 
 class AircraftAdmin(admin.ModelAdmin):
-    list_display = ['name', 'aircraft_type', 'team', 'status', 'activation_time',\
+    list_display = ['name', 'aircraft_type', 'status', 'activation_time',\
                     'serial_number', 'flight_controller_id', 'package', 'aircraft_lock' ]
     search_fields = ['name']
-    list_filter = ['name', 'aircraft_type', 'team', 'status', 'aircraft_lock']
+    list_filter = ['name', 'aircraft_type', 'status', 'aircraft_lock']
     ordering = ['id']
 
 
@@ -25,6 +25,7 @@ class RealtimeAdmin(admin.ModelAdmin):
     search_fields = ['aircraft', 'flight_mode', 'user', 'task', 'location']
     ordering = ['id']
 
+    
 admin.site.register(Aircraft, AircraftAdmin)
 admin.site.register(AircraftType, AircraftTypeAdmin)
 admin.site.register(FlightMode, FlightModeAdmin)
