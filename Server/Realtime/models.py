@@ -22,7 +22,7 @@ class Aircraft(models.Model):
                                         null=False)
     team = models.ForeignKey(Team, on_delete=models.CASCADE, null=False, default=1)
     status = models.BooleanField(null=False)
-    activation_time =  models.DateTimeField(auto_now_add=True, null=False)
+    activation_time =  models.DateTimeField(null=False)
     serial_number = models.CharField(max_length=255, null=False)
     flight_controller_id = models.CharField(max_length=255, null=False)
     package = models.CharField(max_length=255, null=False)
@@ -38,7 +38,7 @@ class Realtime(models.Model):
     flight_mode = models.ForeignKey(FlightMode, on_delete=models.CASCADE, \
                                     null=False)
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=False)
-    task = models.DecimalField(max_digits=1000, decimal_places=5, null=False)
+    task_area = models.DecimalField(max_digits=1000, decimal_places=5, null=False)
     spraying_rate = models.DecimalField(max_digits=1000, decimal_places=5, \
                                         null=False)
     route_spacing = models.DecimalField(max_digits=1000, decimal_places=5, \

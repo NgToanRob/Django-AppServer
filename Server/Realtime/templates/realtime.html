@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="">Aircraft id</label>
+        <input type="number" name="aircraft_id">
+        <br>
+        <label for="">Username</label>
+        <input type="text" name="username">
+        <br>
+        <label for="">Flight mode id</label>
+        <input type="number" name="flight_mode_id">
+        <br>
+        <label for="">Task area</label>
+        <input type="number" name="task_area">
+        <br>
+        <label for="">Spraying Rate</label>
+        <input type="number" name="spraying_rate">
+        <br>
+        <label for="">Route Spacing</label>
+        <input type="number" name="route_spacing">        
+        <br>
+        <label for="">Task Flight Speed</label>
+        <input type="number" name="task_flight_speed">
+        <br>
+        <label for="">Height</label>
+        <input type="number" name="height">
+        <br>
+        <label for="">Hopper Outlet Size</label>
+        <input type="number" name="hopper_outlet_size">
+        <br>
+        <label for="">Spinner Disk Speed</label>
+        <input type="number" name="spinner_disk_speed">
+        <br>
+        <label for="">Location</label>
+        <input type="text" name="location">
+        <br>
+        <label for="">Data</label>
+        <input type="text" name="data">
+        <br>
+        <label for="">Take off time</label>
+        <input type="datetime-local" name="take_off_time">
+        <br>
+        <label for="">Landing time</label>
+        <input type="datetime-local" name="landing_time">
+        <br>
+        <label for="">Flight duration</label>
+        <input type="datetime-local" name="flight_duration">
+        <br>
+        <label for="">Flight record</label>
+        <input type="text" name="flight_record">
+        <br>
+        <input type="submit" value="Submit">
+        <!-- <label for="meeting-time">Choose a time     for your appointment:</label>
+    
+        <input type="datetime-local" id="meeting-time"
+            name="meeting-time" value="2018-06-12T19:30"
+            min="2018-06-07T00:00" max="2018-06-14T00:00"> -->
+    </form>
+</body>
+</html>
