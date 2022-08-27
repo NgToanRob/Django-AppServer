@@ -13,7 +13,7 @@ class AircraftTypeAdmin(admin.ModelAdmin):
     ordering = ['id']
 
 class AircraftAdmin(admin.ModelAdmin):
-    list_display = ['name', 'aircraft_type', 'status', 'activation_time',\
+    list_display = ['id', 'aircraft_type', 'status', 'activation_time',\
                     'serial_number', 'flight_controller_id', 'package', 'aircraft_lock' ]
     search_fields = ['name']
     list_filter = ['name', 'aircraft_type', 'status', 'aircraft_lock']

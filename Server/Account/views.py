@@ -11,13 +11,13 @@ class Home(LoginRequiredMixin, View):
     login_url = '/login'
     # @decorators.login_required()
     def get(self, request):
-        return render(request, 'home.html')
+        return render(request, 'Account/home.html')
 
 
 class Login(View):
     def get(self, request):
         if not request.user.is_authenticated:
-            return render(request, 'login.html')
+            return render(request, 'Account/login.html')
         return redirect('home')
 
     def post(self, request):
@@ -39,7 +39,7 @@ class Logout(View):
 
 class Register(View):
     def get(self, request):
-        return render(request, 'register.html')
+        return render(request, 'Account/register.html')
 
     def post(self, request):
         username = request.POST.get('username')

@@ -9,8 +9,8 @@
 <body>
     <h1>This is home page</h1>
 
-    <form action="logout/" method="POST">
-        {% csrf_token %}
+    <form action="logout/" method="POST">{% csrf_token %}
+        
         <input type="submit" value="Logout" />
     </form>
 
