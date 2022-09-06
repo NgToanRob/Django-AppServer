@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  web:
+    build: 
+      context: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./Server/://D/Workspace/QNXSERVER
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: postgres:13.0-alpine
+    volumes:
+      - db:/Program Files/PostgreSQL/13/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1213
+      - POSTGRES_DB=testdb
+    restart: always    
+
+volumes:
+  db:
+  web:
