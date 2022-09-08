@@ -1,1 +1,18 @@
+# Host environment 
 venv
+
+# Environment variables
+.env.dev
+
+# Documentation
+docs
+*.md
+
+
+# Git file
+.git
+.gitignore
+
+# Docker file
+*Dockerfile*
+*docker-compose*
