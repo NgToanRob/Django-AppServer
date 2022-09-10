@@ -16,3 +16,4 @@ docs
 # Docker file
 *Dockerfile*
 *docker-compose*
+*docker-comose.prod*
