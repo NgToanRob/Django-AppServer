@@ -5,7 +5,8 @@ from django.views import View
 from django.utils.dateparse import parse_datetime
 from .serializers import FlightModeSerializer, AircraftSerializer, AircraftTypeSerializer, RealtimeSerializer
 from .models import Aircraft, FlightMode, Realtime, AircraftType
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets, permissions, status
+from rest_framework.response import Response
 
 # Create your views here.
 class FlightModeViewSet(viewsets.ModelViewSet):
@@ -30,13 +31,24 @@ class RealtimeViewSet(viewsets.ModelViewSet):
     serializer_class = RealtimeSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+    
     def create(self, request, *args, **kwargs):
-        if request.data.get('id'):
-            return super(RealtimeViewSet, self).update(request, *args, **kwargs)
-        else:
-            return super(RealtimeViewSet, self).create(request, *args, **kwargs)
+        """
+        It creates a new instance of the model, and returns a serialized version of
+        the new instance
         
-
+        @param request The request object.
+        @return The serializer.data is being returned.
+        """
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer, request)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        
+        
+    def perform_create(self, serializer, request):
+        serializer.save(user = request.user)
 
 class Adding(LoginRequiredMixin, View):
     def post(self, request):

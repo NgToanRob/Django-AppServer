@@ -25,11 +25,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', "hihihi")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =  int(os.environ.get("DEBUG", default=0))
+DEBUG =  int(os.environ.get("DEBUG", default=1))
 
 ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost 127.0.0.1 103.179.191.184 [::1]").split(" ")
 
-CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS", "http://103.179.191.184/").split(" ")
+CSRF_TRUSTED_ORIGINS = os.environ.get("CSRF_TRUSTED_ORIGINS", "http://103.179.191.184/ http://localhost").split(" ")
 
 # Application definition
 
@@ -51,7 +51,9 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ],
-    PAGESIZE : 20
+    PAGESIZE : 20,
+    'DATETIME_INPUT_FORMATS': ["%d-%m-%Y %H:%M:%S", ],
+    # 'DATETIME_FORMAT': "%d-%m-%Y %H:%M:%S",
 }
 
 MIDDLEWARE = [
@@ -92,10 +94,10 @@ WSGI_APPLICATION = 'Server.wsgi.application'
 
 DATABASES = {
     'default': {
-        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
-        "NAME": os.environ.get("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
-        "USER": os.environ.get("SQL_USER", "user"),
-        "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
+        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.postgresql"),
+        "NAME": os.environ.get("SQL_DATABASE", "testdb"),
+        "USER": os.environ.get("SQL_USER", "postgres"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD", "1213"),
         "HOST": os.environ.get("SQL_HOST", "localhost"),
         "PORT": os.environ.get("SQL_PORT", "5432"),
     }
@@ -131,6 +133,7 @@ AUTH_USER_MODEL = 'Account.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
+DATETIME_FORMAT = 'd-m-Y H:i:s'
 
 LANGUAGE_CODE = 'en-us'
 

@@ -24,8 +24,9 @@ class AircraftAdmin(admin.ModelAdmin):
 
 
 class RealtimeAdmin(admin.ModelAdmin):
-    list_display = [field.name.__str__() for field in Realtime._meta.get_fields()]
-    search_fields = ['aircraft', 'flight_mode', 'user', 'task', 'location']
+    list_display = ['aircraft', 'flight_mode', 'user', 'task_area', \
+                    'spraying_rate', 'location', 'task_flight_speed', 'height' , \
+                    'hopper_outlet_size', 'spinner_disk_speed', 'data', 'take_off_time', 'landing_time']
     ordering = ['id']
 
     
