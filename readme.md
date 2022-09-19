@@ -23,3 +23,10 @@ docker-compose -f docker-compose.prd.yml up -d --build
 # To remove non-running containers
 docker-compose -f docker-compose.prd.yml down
 ```
+
+
+## Accessing
+
+Admin link [localhost:1337/admin](localhost:1337/admin)
+
+Create action in realtime link [localhost:1337/realtime/realtime](localhost:1337/realtime/realtime)
