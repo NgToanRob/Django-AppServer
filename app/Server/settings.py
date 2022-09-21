@@ -53,7 +53,7 @@ REST_FRAMEWORK = {
     ],
     PAGESIZE : 20,
     'DATETIME_INPUT_FORMATS': ["%d-%m-%Y %H:%M:%S", ],
-    # 'DATETIME_FORMAT': "%d-%m-%Y %H:%M:%S",
+    'DATETIME_FORMAT': "%d-%m-%Y %H:%M:%S"
 }
 
 MIDDLEWARE = [

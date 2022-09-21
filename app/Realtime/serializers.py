@@ -29,9 +29,4 @@ class AircraftSerializer(ModelSerializer):
 class RealtimeSerializer(ModelSerializer):
     class Meta:
         model = Realtime
-        # fields = [f.name for f in Realtime._meta.get_fields()]
-        # fields = '__all__'
         exclude = ['user']
-
-    # take_off_time = serializers.DateTimeField(format="%d-%m-%Y %H:%M:%S")
-    # landing_time = serializers.DateTimeField(format="%d-%m-%Y %H:%M:%S")

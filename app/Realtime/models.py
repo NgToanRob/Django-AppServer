@@ -54,7 +54,7 @@ class Realtime(models.Model):
     data = ArrayField(ArrayField(models.FloatField()), null=True)
     # array [2] = {(x,y)}
     take_off_time = models.DateTimeField(null=False)
-    landing_time = models.DateTimeField(null=False)
+    landing_time = models.DateTimeField(null=True)
     
     # skip
     def __str__(self):
