@@ -1,6 +1,7 @@
 venv/
 
-Server/Account/__pycache__
-Server/Account/migrations/__pycache__
+app/Account/__pycache__
+app/Account/migrations/__pycache__
 
-Server/Server/__pycache__
+app/Server/__pycache__
+app/Realtime/__pycache__

@@ -14,6 +14,7 @@ services:
       - ./.env.prod
     depends_on:
       - db
+      - redis
     networks:
       - web_network
   db:
@@ -24,6 +25,17 @@ services:
       - ./.env.prod.db
     networks:
     - web_network
+
+  redis:
+    container_name: redis
+    image: redis:alpine
+    ports:
+      - '6378:6379'
+    volumes:
+      - redisdata:/var/lib/redis/data/
+    networks:
+      - web_network
+
   nginx:
     build: ./nginx
     volumes:
@@ -38,6 +50,7 @@ services:
 volumes:
   postgres_data: 
   static_volume:
+  redisdata:
 
 networks:
   web_network:

@@ -1,7 +1,4 @@
-from dataclasses import field, fields
-from wsgiref.handlers import format_date_time
 from rest_framework.serializers import ModelSerializer
-from rest_framework import serializers
 from .models import Aircraft, AircraftType, FlightMode, Realtime
 
 

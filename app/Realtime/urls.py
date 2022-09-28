@@ -18,6 +18,5 @@ router.register('realtime', views.RealtimeViewSet)
 '''
 
 urlpatterns = [
-    path('add/', views.Adding.as_view(), name='add'),
     path('', include(router.urls))
 ]
