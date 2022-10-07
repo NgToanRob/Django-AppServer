@@ -27,6 +27,6 @@ docker-compose -f docker-compose.prd.yml down
 
 ## Accessing
 
-Admin link [localhost:1337/admin](localhost:1337/admin)
+Admin link [localhost/admin](localhost/admin)
 
-Create action in realtime link [localhost:1337/realtime/realtime](localhost:1337/realtime/realtime)
+Create action in realtime link [localhost/realtime/realtime](localhost/realtime/realtime)
