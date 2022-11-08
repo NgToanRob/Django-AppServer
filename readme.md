@@ -1,9 +1,3 @@
-## Clone project from git
-```
-git clone https://github.com/NgToanRob/DjangoServer
-git branch -M main
-```
-
 ## Install Docker and docker compose
 
 We should follow this tutorial in docker docs to install Docker in your operation systems.
