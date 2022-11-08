@@ -8,7 +8,7 @@ git branch -M main
 
 We should follow this tutorial in docker docs to install Docker in your operation systems.
 
-We have 3 services in this compose, there are web app, postgresql database and server engine nginx.
+We have 3 services in this compose, there are django web app, postgresql database, redis caching and server engine nginx.
 ```bash
 # Build network from 3 images in docker-compose.prd.yml file
 docker-compose -f docker-compose.prd.yml build
