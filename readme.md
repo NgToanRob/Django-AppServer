@@ -6,7 +6,7 @@ git branch -M main
 
 ## Install Docker and docker compose
 
-We should follow this tutorial in docker docs to install Docker in your operation systems. My OS is Ubuntu 22.04 and below lines are my workflow after installing them.
+We should follow this tutorial in docker docs to install Docker in your operation systems.
 
 We have 3 services in this compose, there are web app, postgresql database and server engine nginx.
 ```bash
